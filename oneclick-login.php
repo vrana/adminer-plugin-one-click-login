@@ -25,7 +25,7 @@ class OneClickLogin {
 
 	function login($login, $password) {
 		// check if server is allowed
-		return isset($this->servers[SERVER]);
+		return isset($this->servers[Adminer\SERVER]);
 	}
 	
 	function databaseValues($server){
@@ -46,9 +46,9 @@ class OneClickLogin {
 		</form>
 		<table>
 			<tr>
-				<th><?php echo lang('Server') ?></th>
-				<th><?php echo lang('User') ?></th>
-				<th><?php echo lang('Database') ?></th>
+				<th><?php echo Adminer\lang('Server') ?></th>
+				<th><?php echo Adminer\lang('User') ?></th>
+				<th><?php echo Adminer\lang('Database') ?></th>
 			</tr>
 			
 			<?php
@@ -71,11 +71,11 @@ class OneClickLogin {
 							<form action="" method="post">
 								<input type="hidden" name="auth[driver]" value="<?php echo $this->driver; ?>">
 								<input type="hidden" name="auth[server]" value="<?php echo $host; ?>">
-								<input type="hidden" name="auth[username]" value="<?php echo h($server["username"]); ?>">
-								<input type="hidden" name="auth[password]" value="<?php echo h($server["pass"]); ?>">
-								<input type='hidden' name="auth[db]" value="<?php echo h($database); ?>"/>
+								<input type="hidden" name="auth[username]" value="<?php echo Adminer\h($server["username"]); ?>">
+								<input type="hidden" name="auth[password]" value="<?php echo Adminer\h($server["pass"]); ?>">
+								<input type='hidden' name="auth[db]" value="<?php echo Adminer\h($database); ?>"/>
 								<input type='hidden' name="auth[permanent]" value="1"/>
-								<input type="submit" value="<?php echo lang('Enter'); ?>">
+								<input type="submit" value="<?php echo Adminer\lang('Enter'); ?>">
 							</form>
 						</td>
 					</tr>
